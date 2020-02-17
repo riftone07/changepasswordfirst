@@ -1,0 +1,30 @@
+
+{
+    "name": "riftone07/changepasswordfirst",
+    "description": "a package which allows you to change your password on the first connection",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "cherif diallo",
+            "email": "riftone07@gmail.com"
+        }
+    ],  
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "riftone07\\changepasswordfirst\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "~5.0|^6.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "riftone07\\changepasswordfirst\\ChangePasswordFirstServiceProvider"
+            ]
+        }
+    }
+}
