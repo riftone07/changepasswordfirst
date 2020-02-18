@@ -14,7 +14,13 @@ Then add the service provider to config/app.php. In Laravel versions 5.5 and bey
 ```
     riftone07\changepasswordfirst\ChangePasswordFirstServiceProvider::class,
 ```
- 
+
+### Run the migrations ###
+```
+   php artisan migrate
+``` 
+
+
 ### Using a middleware ###
 
 This package comes with ``` PasswordExpired ``` middleware. You can add them inside your app/Http/Kernel.php file
