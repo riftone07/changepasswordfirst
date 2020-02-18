@@ -15,6 +15,27 @@ Then add the service provider to config/app.php. In Laravel versions 5.5 and bey
     riftone07\changepasswordfirst\ChangePasswordFirstServiceProvider::class,
 ```
  
+### Using a middleware ###
+
+This package comes with ``` PasswordExpired ``` middleware. You can add them inside your app/Http/Kernel.php file
+
+
+```
+protected $routeMiddleware = [
+    // ...
+     'password_expired' => \riftone07\changepasswordfirst\Http\Middleware\PasswordExpired::class
+];
+```
+
+Then you can protect your routes using middleware rules except your connection routes:
+
+```
+
+Route::group(['middleware' => ['password_expired']], function () {
+    //
+});
+```
+
 ### Publish ###
  
 As optional if you want to modify the default views, you can publish the views file:
