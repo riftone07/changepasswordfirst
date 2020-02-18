@@ -24,11 +24,11 @@ class ChangePasswordFirstController extends Controller
 		]);
 
         // Checking current password
-		if (!Hash::check($request->current_password, $request->user()->password)) {
+		if (!Hash::check($request->current_password, auth('web')->user()->password)) {
 			return redirect()->back()->withErrors(['current_password' => 'Mot de passe actuelle incorrect']);
 		}
 
-		$user =  User::find(Auth::id());
+		$user =  User::find(auth('web')->user()->id);
 		$user->password = bcrypt($request->password);
 		$user->password_changed_at = Carbon::now()->toDateTimeString();
 		$user->save();

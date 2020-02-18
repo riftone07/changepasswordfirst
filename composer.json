@@ -2,7 +2,7 @@
 {
     "name": "riftone07/changepasswordfirst",
     "description": "a package which allows you to change your password on the first connection",
-    "type": "project",
+    "type": "library",
     "license": "MIT",
     "authors": [
         {
